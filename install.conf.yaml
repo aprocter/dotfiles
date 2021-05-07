@@ -8,6 +8,8 @@
     ~/.vimrc: vimrc
     ~/.oh-my-zsh: ohmyzsh
     ~/.zshrc: zshrc
+    ~/.p10k.zsh: p10k.zsh
+    ~/.zsh-custom: zsh-custom
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
