@@ -132,3 +132,10 @@ fi
 
 # Enable fzf integration (TODO: find a way to put this file under management)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Enable Homebrew on Linux
+if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+elif [ -x "$HOME/.linuxbrew/bin/brew" ]; then
+  eval "$("$HOME/.linuxbrew/bin/brew" shellenv)"
+fi
