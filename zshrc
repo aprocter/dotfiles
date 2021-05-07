@@ -130,4 +130,5 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Enable fzf integration (TODO: find a way to put this file under management)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
