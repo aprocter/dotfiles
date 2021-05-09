@@ -133,8 +133,14 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Enable fzf integration (TODO: find a way to put this file under management)
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Enable fzf integration.
+if [[ -f ~/.fzf.zsh ]]; then
+  source ~/.fzf.zsh
+elif [[ -f /usr/share/doc/fzf/examples/completion.zsh ]] \
+  && [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then
+  source /usr/share/doc/fzf/examples/completion.zsh
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+fi
 
 # Enable Homebrew on Linux
 if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
