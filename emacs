@@ -1,7 +1,3 @@
-(setq custom-file "~/.emacs.custom")
-(if (file-exists-p custom-file)
-    (load custom-file))
-
 ;;
 ;; Correct the exec-path and PATH to match what we would have in a shell.
 ;;
@@ -127,7 +123,57 @@ apps are not started from a shell."
   :bind (("C-c m s" . magit-status)))
 
 ;;
-;; Local customizations.
+;; Misc. stuff moved over from custom vars. TODO: de-cargo-cult.
+;;
+(setq column-number-mode t)
+(setq display-line-numbers nil)
+(setq frame-background-mode 'dark)
+(setq fzf/args
+   "-x --color=dark --print-query --margin=1,0 --no-hscroll --info=hidden")
+(setq lsp-ui-doc-enable nil)
+(setq ns-alternate-modifier 'super)
+(setq ns-command-modifier 'meta)
+(setq package-archives
+   '(("gnu" . "https://elpa.gnu.org/packages/")
+     ("melpa" . "https://melpa.org/packages/")
+     ("melpa-stable" . "https://stable.melpa.org/packages/")))
+(setq safe-local-variable-values '((whitespace-line-column . 80)))
+(setq size-indication-mode t)
+(setq which-key-mode t)
+(if window-system
+    (tool-bar-mode -1)
+)
+
+;;
+;; Faces stuff moved over from custom-set-faces. TODO: make not-Mac specific.
+;;
+(set-face-attribute 'default nil
+    :inherit nil
+    :extend nil
+    :stipple nil
+    :background "black"
+    :foreground "gray90"
+    :inverse-video nil
+    :box nil
+    :strike-through nil
+    :overline nil
+    :underline nil
+    :slant 'normal
+    :weight 'normal
+    :height 120
+    :width 'normal
+    :foundry "nil"
+    :family "Menlo")
+
+;; Local .emacs customizations.
 ;;
 (if (file-exists-p "~/.emacs.local")
     (load "~/.emacs.local"))
+
+;;
+;; Store customized variables in a local file, to make sure emacs doesn't scribble
+;; on the dotfile repo. In general, customizations should be done in .eamcs instead.
+;;
+(setq custom-file "~/.emacs.custom")
+(if (file-exists-p custom-file)
+    (load custom-file))
