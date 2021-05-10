@@ -1,32 +1,6 @@
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(display-line-numbers nil)
- '(frame-background-mode 'dark)
- '(fzf/args
-   "-x --color=dark --print-query --margin=1,0 --no-hscroll --info=hidden")
- '(lsp-ui-doc-enable nil)
- '(ns-alternate-modifier 'super)
- '(ns-command-modifier 'meta)
- '(package-archives
-   '(("gnu" . "https://elpa.gnu.org/packages/")
-     ("melpa" . "https://melpa.org/packages/")
-     ("melpa-stable" . "https://stable.melpa.org/packages/")))
- '(package-selected-packages
-   '(which-key fzf lsp-ui magit helm-projectile helm company projectile flycheck ace-window))
- '(safe-local-variable-values '((whitespace-line-column . 80)))
- '(size-indication-mode t)
- '(tool-bar-mode nil)
- '(which-key-mode t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :background "black" :foreground "gray90" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Menlo")))))
+(setq custom-file "~/.emacs.custom")
+(if (file-exists-p custom-file)
+    (load custom-file))
 
 ;;
 ;; Correct the exec-path and PATH to match what we would have in a shell.
