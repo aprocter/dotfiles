@@ -8,6 +8,7 @@
 - clean: ['~']
 
 - link:
+    ~/.emacs: emacs
     ~/.vimrc: vimrc
     ~/.oh-my-zsh: ohmyzsh
     ~/.zshrc: zshrc
