@@ -136,8 +136,7 @@ apps are not started from a shell."
 (setq ns-command-modifier 'meta)
 (setq package-archives
    '(("gnu" . "https://elpa.gnu.org/packages/")
-     ("melpa" . "https://melpa.org/packages/")
-     ("melpa-stable" . "https://stable.melpa.org/packages/")))
+     ("melpa" . "https://melpa.org/packages/")))
 (setq safe-local-variable-values '((whitespace-line-column . 80)))
 (setq size-indication-mode t)
 (setq which-key-mode t)
