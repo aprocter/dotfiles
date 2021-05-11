@@ -1,3 +1,5 @@
+; -*- emacs-lisp -*-
+
 ;;
 ;; Correct the exec-path and PATH to match what we would have in a shell.
 ;;
@@ -84,7 +86,6 @@ apps are not started from a shell."
 (use-package lsp)
 (use-package lsp-mode :commands lsp)
 (use-package lsp-ui :commands lsp-ui-mode)
-(use-package company-lsp :commands company-lsp)
 (add-hook 'ruby-mode-hook #'lsp)
 (add-hook 'enh-ruby-mode-hook #'lsp)
 (setq lsp-prefer-flymake :none)
