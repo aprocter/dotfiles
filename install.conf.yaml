@@ -14,3 +14,9 @@
     ~/.zshrc: zshrc
     ~/.p10k.zsh: p10k.zsh
     ~/.zsh-custom: zsh-custom
+    ~/.iTerm2: iTerm2
+
+- shell:
+  -
+    command: if [ `uname -s` = 'Darwin' ]; then defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iTerm2" && defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true; fi
+    description: Adjusting iTerm2 settings location
