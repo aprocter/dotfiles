@@ -15,6 +15,7 @@
     ~/.p10k.zsh: p10k.zsh
     ~/.zsh-custom: zsh-custom
     ~/.iTerm2: iTerm2
+    ~/.tmux.conf: tmux.conf
 
 - shell:
   -
