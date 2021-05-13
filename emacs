@@ -91,6 +91,8 @@ apps are not started from a shell."
 (setq lsp-prefer-flymake :none)
 (setq lsp-log-io t)
 (setq lsp-enable-snippet nil)
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
 
 ;;
 ;; company-mode (completion)
@@ -139,7 +141,7 @@ apps are not started from a shell."
      ("melpa" . "https://melpa.org/packages/")))
 (setq safe-local-variable-values '((whitespace-line-column . 80)))
 (setq size-indication-mode t)
-(setq which-key-mode t)
+(which-key-mode)
 (if window-system
     (tool-bar-mode -1)
 )
