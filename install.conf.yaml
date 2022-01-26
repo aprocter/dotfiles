@@ -16,6 +16,7 @@
     ~/.zsh-custom: zsh-custom
     ~/.iTerm2: iTerm2
     ~/.tmux.conf: tmux.conf
+    ~/.zsh-util: zsh-util
 
 - shell:
   -
