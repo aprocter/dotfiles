@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+if [ -z "${WSLENV:-}" ]; then
+  echo "Not running on WSL; exiting."
+  exit 0
+fi
+
+WINDIR="$HOME/.win"
+mkdir -p "$WINDIR"
+
+get_win_path() {
+  if [ -n "${1:-}" ]; then
+    wslpath "$1"
+  fi
+}
+
+set_win_link() {
+  TARGET="$(get_win_path "$(wslvar $1)")"
+  if [ -n "${TARGET:-}" ]; then
+    ln -sTf "$TARGET" "$WINDIR/$2"
+  fi
+}
+
+set_win_link APPDATA appdata
+set_win_link USERPROFILE home
+
+if [ -d "$WINDIR/home/Desktop" ]; then
+  ln -sTf "$WINDIR/home/Desktop" "$WINDIR/desktop"
+fi

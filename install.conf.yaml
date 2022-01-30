@@ -7,6 +7,11 @@
 
 - clean: ['~']
 
+- shell:
+  -
+    command: ./setup-win-links
+    description: Setting up links in ~/.win
+
 - link:
     ~/.emacs: emacs
     ~/.vimrc: vimrc
