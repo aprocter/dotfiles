@@ -111,25 +111,6 @@ source $ZSH/oh-my-zsh.sh
 
 PROMPT="%{$fg_bold[cyan]%}$USER@%m ${PROMPT}"
 
-# ruby-build installs a non-Homebrew OpenSSL for each Ruby version installed and these are never upgraded.
-#
-# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
-# to your ~/.zshrc:
-
-if command -v brew >/dev/null; then
-  export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-fi
-
-# Note: this may interfere with building old versions of Ruby (e.g <2.4) that use
-# OpenSSL <1.1.
-
-# Load rbenv automatically by appending
-# the following to ~/.zshrc:
-
-if command -v rbenv >/dev/null; then
-  eval "$(rbenv init -)"
-fi
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
